@@ -2,7 +2,7 @@
 
 Pig game is simple dice roll game , it's amazing App for apply js knowledge
 
-<img src="![dd](https://user-images.githubusercontent.com/57900722/111035864-ab21c580-841c-11eb-9c9a-243f890aa8b0.gif)">
+<img src="![dd](https://user-images.githubusercontent.com/57900722/111036039-82e69680-841d-11eb-8385-2da8d11edc8e.gif)">
 
 You can Play my game <a href="https://othmanekahtal.github.io/Pig-Game-/">in this link 🎲</a>
 
