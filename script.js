@@ -5,6 +5,7 @@ let dice = document.querySelector(".dice");
 let new_game_btn = document.querySelector(".btn--new");
 let roll_btn = document.querySelector(".btn--roll");
 let hold_btn = document.querySelector(".btn--hold");
+let score = document.querySelector(".player--active .score").textContent;
 
 // // get Players :
 let players = document.querySelectorAll(".player");
@@ -14,6 +15,12 @@ dice.style.display = "none";
 document.querySelectorAll(".score").forEach((elm) => {
   elm.textContent = 0;
 });
+document.querySelector(".player--0 .score").textContent = localStorage.getItem(
+  "score_Player-1"
+);
+document.querySelector(".player--1 .score").textContent = localStorage.getItem(
+  "score_Player-2"
+);
 // rolling dice :
 
 function roll_event() {
@@ -64,6 +71,14 @@ function hold_event() {
       elm.classList.add("player--active");
     }
   });
+  localStorage.setItem(
+    "score_Player-1",
+    document.querySelector(".player--0 .score").textContent
+  );
+  localStorage.setItem(
+    "score_Player-2",
+    document.querySelector(".player--1 .score").textContent
+  );
 }
 hold_btn.addEventListener("click", hold_event);
 
@@ -76,6 +91,14 @@ new_game_btn.addEventListener("click", () => {
     Element.classList.remove("player--active");
     Element.querySelector(".current-score").textContent = 0;
     Element.querySelector(".score").textContent = 0;
+    localStorage.setItem(
+      "score_Player-1",
+      document.querySelector(".player--0 .score").textContent
+    );
+    localStorage.setItem(
+      "score_Player-2",
+      document.querySelector(".player--1 .score").textContent
+    );
     if (Element.classList.contains("player--winner")) {
       Element.classList.remove("player--winner");
     }
